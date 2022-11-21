@@ -8,7 +8,7 @@ const { verify } = require("../utils/verify.js");
 
 const VRF_FUND_AMOUNT = ethers.utils.parseEther("1");
 
-module.exports.default = async ({ getNamedAccounts, deployments }) => {
+module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
 

@@ -4,7 +4,7 @@ const { DevelopmentChain } = require("../helper_hardhat_config.js");
 const BASE_FEE = ethers.utils.parseEther("0.25");
 const GAS_PRICE_FEE = 1e9; // eth's price changes depending on the network
 
-module.exports.default = async ({ getNamedAccounts, deployments }) => {
+module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
   const args = [BASE_FEE, GAS_PRICE_FEE];
