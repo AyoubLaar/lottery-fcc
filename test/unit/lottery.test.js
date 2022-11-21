@@ -13,10 +13,10 @@ const { assert } = require("chai");
         chainId = network.config.chainId;
       beforeEach(async () => {
         const { deployer } = await getNamedAccounts();
-        await deployments.fixture();
+        await deployments.fixture(["mocks", "lottery"]);
         lottery = await ethers.getContract("lottery", deployer);
         vrfcoordinatorV2Mock = await ethers.getContract(
-          "VRFCoordinatorV2Mock ",
+          "VRFCoordinatorV2Mock",
           deployer
         );
       });
